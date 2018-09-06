@@ -12,7 +12,10 @@ class Router {
     private $p404ControllerFunc;
 
     public function __construct () {
-        $this->url = isset($_GET['url']) ? $_GET['url'] : '';
+        // This Old method of getting the url didn't work
+        // $this->url = isset($_GET['url']) ? $_GET['url'] : '';
+
+        $this->url = "$_SERVER[REQUEST_URI]";
     }
 
     public function get ($path, $controller) {

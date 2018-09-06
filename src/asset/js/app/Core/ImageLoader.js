@@ -9,8 +9,6 @@ class ImageLoader {
             img.onload = () => resolve({path, status: 'ok'})
             img.onerror = () => resolve({path, status: 'error'})
             img.src = path;
-        }).then(function(e) {
-            console.log(e)
         })
 
         return promise

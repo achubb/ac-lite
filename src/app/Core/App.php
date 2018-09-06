@@ -11,7 +11,7 @@ class App {
         require ROOT . 'engine/Core/Autoloader.php';
         Autoloader::register();
 
-        // Session::start();
+        //Session::start();
         Route::init();
     }
 

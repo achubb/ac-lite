@@ -50,6 +50,7 @@ class Router {
 
             Controller = this.getController()
 
+            console.log(Controller)
             // Event delegation
             S.BM(this, ['getController'])
             new EventDelegation(this.getController)

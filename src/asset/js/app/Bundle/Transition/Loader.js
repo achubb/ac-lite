@@ -1,4 +1,5 @@
 import ImageLoader from '../../Core/ImageLoader.js'
+import S from '@ariiiman/s'
 
 class Loader {
     
@@ -12,6 +13,18 @@ class Loader {
 
         const loaded = Promise.all(imgToLoad.map(ImageLoader.checkImage)).then(function(e){
             console.log('Images Loaded...')
+
+            // Example Animation Here, Move This Later...
+
+            const animation = new S.M({
+                el: '#loader',
+                p: {
+                    x: [0, 100, 'vw']
+                },
+                d: 2000,
+                e: 'io4'
+            })
+            animation.play()
         })
 
         return loaded 

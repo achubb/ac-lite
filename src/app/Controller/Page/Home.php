@@ -12,7 +12,7 @@ class Home extends Controller {
             MESSAGE
         ------------------------------------*/
 
-        $this->data->msg = 'Home';
+        $this->data->msg = 'Home Page Data';
 
         /*------------------------------------
             HEAD

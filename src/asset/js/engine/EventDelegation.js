@@ -12,9 +12,9 @@ class EventDelegation {
         this.xhr = S.G.id('xhr')
 
         // Bind
-        S.BM(this, ['eventDelegation', 'done', 'xhrCallback'])
+        // S.BM(this, ['eventDelegation', 'done', 'xhrCallback'])
 
-        S.L(S.Dom.body, 'add', 'click', this.eventDelegation)
+        // S.L(S.Dom.body, 'add', 'click', this.eventDelegation)
     }
 
     eventDelegation (event) {

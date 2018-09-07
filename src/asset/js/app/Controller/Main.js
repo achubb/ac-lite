@@ -1,5 +1,5 @@
 import Loader from '../Bundle/Transition/Loader.js'
-//import Transition from '../Bundle/Transition/Transition.js'
+import Transition from '../Bundle/Transition/Transition.js'
 
 class Main {
 
@@ -12,7 +12,7 @@ class Main {
     }
 
     outro () {
-        //Transition.outro()
+        Transition.outro()
     }
 
 }

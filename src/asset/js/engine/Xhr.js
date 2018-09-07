@@ -24,6 +24,7 @@ import S from '@ariiiman/s'
 class Xhr {
 
     static controller (page, cb, args) {
+        console.log('hit the xhr controller')
         const path = 'index.php?url=' + page + '&xhr=true'
         const xhr = new XMLHttpRequest()
 
@@ -56,6 +57,7 @@ class Xhr {
         const a = 'add'
 
         let blockPopstateEvent = d.readyState !== c
+
 
         S.L(w, a, 'load', load)
         S.L(w, a, 'popstate', popstate)

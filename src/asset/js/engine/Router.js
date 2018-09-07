@@ -30,7 +30,7 @@ class Router {
         this.p = Penryn
 
         // Outro is on : paralyse outro method during animations
-        this.p.outroIsOn = false
+        this.p.outroIsOn = true
 
         // 404
         this.p.is404 = !document.querySelector('meta[name=description]')

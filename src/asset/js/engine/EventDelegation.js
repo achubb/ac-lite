@@ -12,9 +12,9 @@ class EventDelegation {
         this.xhr = S.G.id('xhr')
 
         // Bind
-        // S.BM(this, ['eventDelegation', 'done', 'xhrCallback'])
+        S.BM(this, ['eventDelegation', 'done', 'xhrCallback'])
 
-        // S.L(S.Dom.body, 'add', 'click', this.eventDelegation)
+        S.L(S.Dom.body, 'add', 'click', this.eventDelegation)
     }
 
     eventDelegation (event) {
@@ -26,9 +26,11 @@ class EventDelegation {
         while (target) {
             if (target.tagName === 'A') {
                 targetIsATag = true
+                console.log('foo')
                 break
             } else if ((target.tagName === 'INPUT' || target.tagName === 'BUTTON') && target.type === 'submit') {
                 targetIsASubmit = true
+                console.log('bar')
                 break
             }
             target = target.parentNode
@@ -36,6 +38,7 @@ class EventDelegation {
 
         if (targetIsATag) {
             const targetHref = target.dataset.href === undefined ? target.href : target.dataset.href
+            console.log('foobar')
 
             if (target.classList.contains('_tb')) {
                 prD()
@@ -51,13 +54,16 @@ class EventDelegation {
             } else {
                 const hrefBeginByHash = targetHref.charAt(targetHref.length - 1) === '#'
                 const hrefIsMailto = targetHref.substring(0, 6) === 'mailto'
+                console.log('im here')
 
                 if (hrefBeginByHash) {
                     prD()
                 } else if (!hrefIsMailto && !target.classList.contains('_ost') && targetHref !== '' && target.getAttribute('target') !== '_blank') {
+                    console.log('strange condition')
                     prD()
 
                     if (this.p.outroIsOn) {
+                        console.log('outro is on')
                         this.path = {
                             old: S.Win.path,
                             new: targetHref.replace(/^.*\/\/[^/]+/, '')
@@ -67,6 +73,7 @@ class EventDelegation {
                             this.p.outroIsOn = false
 
                             this.target = target
+                            console.log('go to xhr')
                             this.xhrReq()
                         }
                     }
@@ -94,6 +101,8 @@ class EventDelegation {
         this.p.target = this.target
         this.p.path = this.path
         this.p.is404 = false
+
+        console.log(this.p.done)
 
         // Old outro
         oldInstance.outro()

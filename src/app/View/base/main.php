@@ -47,7 +47,9 @@
     <body>
         <main id="app">
             <div id="xhr">
+              <div class="xPage">
                 <?= $this->content; ?>
+              </div>
             </div>
             <?php include ROOT . 'app/View/common/sail.php'; ?>
             <?php include ROOT . 'app/View/common/loader.php'; ?>

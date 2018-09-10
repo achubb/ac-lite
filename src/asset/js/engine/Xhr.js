@@ -44,6 +44,7 @@ class Xhr {
 
         // Browser history update
         function getHistoryUpdate () {
+            console.log('getHistoryUpdate')
             const pageUrl = page === 'home' ? '/' : page
 
             history.pushState({key: 'value'}, 'titre', pageUrl)

@@ -1,5 +1,6 @@
 import S from '@ariiiman/s'
 import Xhr from './Xhr.js'
+import Fetch from './Fetch.js'
 
 class EventDelegation {
 
@@ -61,6 +62,11 @@ class EventDelegation {
                 } else if (!hrefIsMailto && !target.classList.contains('_ost') && targetHref !== '' && target.getAttribute('target') !== '_blank') {
                     console.log('strange condition')
                     prD()
+
+                    // At this point we need to fetch new page content
+                    //Fetch.loadPage(targetHref)
+                    history.pushState(null, null, targetHref)
+                    Fetch.changePage()
 
                     if (this.p.outroIsOn) {
                         console.log('outro is on')

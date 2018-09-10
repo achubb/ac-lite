@@ -40,3 +40,12 @@
 /*───────────────────────────────────────────────────────────*/
 
 @import './app/page/**/*.css';
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.xPage {
+  border: 3px solid tomato;
+}

@@ -2,9 +2,9 @@ import ImageLoader from '../../Core/ImageLoader.js'
 import S from '@ariiiman/s'
 
 class Loader {
-    
+
     run() {
-        
+
         // Get all the images that are passes in and pass to checkImage
         // to load and verify image exists. Promise resolves after all
         // images are loaded
@@ -27,7 +27,7 @@ class Loader {
             animation.play()
         })
 
-        return loaded 
+        return loaded
 
 
     }

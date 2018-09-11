@@ -35,6 +35,9 @@ class Router {
         // 404
         this.p.is404 = !document.querySelector('meta[name=description]')
 
+        // Transition state
+        this.p.inTransition = false
+
         this.p.path = {new: S.Win.path}
 
         // On popstate

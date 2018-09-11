@@ -1,4 +1,5 @@
 <div id="a">
-    <div id="a-content">About</div>
-    <a id="a-link" href="/">HOME</a>
+    <div id="a-content">
+        <h1>About</h1>
+    </div>
 </div>

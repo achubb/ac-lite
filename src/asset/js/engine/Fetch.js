@@ -4,7 +4,6 @@ import Transition from '../app/Bundle/Transition/Transition.js'
 class Fetch {
 
     loadPage (url) {
-        console.log('LOADPAGE ' + url)
         return fetch(url, {
             method: 'GET'
         }).then(function(response) {
@@ -13,16 +12,11 @@ class Fetch {
     }
 
     changePage () {
-        console.log('CHANGEPAGE')
-
+        const w = window
         const xhrStage = document.querySelector('#xhr')
-        console.log(xhrStage)
-
-        // The URL should already be changed
-        const url = window.location.href
+        const url = w.location.href // The URL should already be changed
 
         this.loadPage(url).then(function(responseText) {
-            console.log('chgpg')
             const wrapper = document.createElement('div')
                   wrapper.innerHTML = responseText
 
@@ -30,7 +24,6 @@ class Fetch {
             const newCont = wrapper.querySelector('.xPage')
 
             xhrStage.appendChild(newCont);
-            console.log('done')
             Transition.page(oldCont, newCont)
         })
     }

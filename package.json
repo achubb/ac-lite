@@ -10,7 +10,8 @@
         "push": "bash build/bash/push.sh"
     },
     "dependencies": {
-        "@ariiiman/s": "2.1.2"
+        "@ariiiman/s": "2.1.2",
+        "stylus": "^0.54.5"
     },
     "devDependencies": {
         "autoprefixer": "9.1.0",

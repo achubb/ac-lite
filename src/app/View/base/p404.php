@@ -31,7 +31,6 @@
                     <a href="/">BACK TO HOME</a>
                 </div>
             </div>
-            <?php include ROOT . 'app/View/common/sail.php'; ?>
             <?php include ROOT . 'app/View/common/loader.php'; ?>
         </main>
         <?php include ROOT . 'app/View/issue/updateBrowser.php'; ?>

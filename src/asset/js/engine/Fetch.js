@@ -4,6 +4,7 @@ import Transition from '../app/Bundle/Transition/Transition.js'
 class Fetch {
 
     loadPage (url) {
+        // Fetch the requested url and return the response
         return fetch(url, {
             method: 'GET'
         }).then(function(response) {

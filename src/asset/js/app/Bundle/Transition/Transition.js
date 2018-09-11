@@ -7,18 +7,14 @@ class Transition {
     }
 
     page(oldPage, newPage) {
-        console.log('PAGE TRANSITION...')
-
-        // oldPage.style.position = 'absolute'
-        newPage.style.transform = 'translate3d(100vw, 0px, 0px)'
-
-        // set inTransition to true
-        console.log(window.Penryn.inTransition)
-        window.Penryn.inTransition = true
 
         // Move the page to be loaded outside the frame
+        newPage.style.transform = 'translate3d(100vw, 0px, 0px)'
 
+        // set inTransition to true, to kill clicks when in transition
+        window.Penryn.inTransition = true
 
+        // Transition animation for the old or exiting page
         const oldExit = new S.M({
             el: oldPage,
             p: {
@@ -27,11 +23,13 @@ class Transition {
             d: 1000,
             e: 'io4',
             cb: function() {
+                // Once the animation is complete remove from DOM
                 oldPage.parentNode.removeChild(oldPage)
             }
         })
         oldExit.play()
 
+        // Transition animation for the new or incoming page
         const newEnter = new S.M({
             el: newPage,
             p: {
@@ -40,7 +38,7 @@ class Transition {
             d: 1000,
             e: 'io4',
             cb: function() {
-                console.log(this)
+                // When animation is complete set inTransition back to false
                 this.Penryn.inTransition = false
             }
         })

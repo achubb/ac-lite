@@ -22,7 +22,7 @@ module.exports = {
     },
     stylus: {
         entry: 'src/asset/css/main.styl',
-        dest: 'src/public/css/app2.css',
+        dest: 'src/public/css/app.css',
         watch: [
             './src/asset/css/main.styl',
             './src/asset/css/app/**/*.styl',

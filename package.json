@@ -11,6 +11,7 @@
     },
     "dependencies": {
         "@ariiiman/s": "2.1.2",
+        "poststylus": "^1.0.0",
         "stylus": "^0.54.5"
     },
     "devDependencies": {
@@ -32,7 +33,7 @@
         "html-minifier": "3.5.19",
         "postcss": "7.0.2",
         "postcss-easy-import": "3.0.0",
-        "postcss-media-minmax": "3.0.0",
+        "postcss-media-minmax": "^3.0.0",
         "postcss-mixins": "6.2.0",
         "postcss-nested": "3.0.0",
         "postcss-position": "1.0.0",

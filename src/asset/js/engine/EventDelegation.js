@@ -6,7 +6,6 @@ class EventDelegation {
 
     constructor (getController) {
 
-
         // Opts
         this.getController = getController
 

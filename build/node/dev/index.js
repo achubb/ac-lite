@@ -3,9 +3,11 @@ const config = require('./config/config.js')
 const browserSync = require('browser-sync').create()
 const rollup = require('../common/tool/rollup.js')
 const postcss = require('../common/tool/postcss.js')
+const stylus = require('../common/tool/stylus.js')
 
 compileJs()
-compileCss()
+compileStylus()
+// compileCss()
 
 const browserSyncConfig = {
     open: 'external',
@@ -18,7 +20,8 @@ browserSync.init()
 
 browserSync.watch(config.php.watch).on('change', browserSync.reload)
 browserSync.watch(config.js.watch).on('change', compileJs)
-browserSync.watch(config.css.watch).on('change', compileCss)
+// browserSync.watch(config.css.watch).on('change', compileCss)
+browserSync.watch(config.stylus.watch).on('change', compileStylus)
 
 function compileJs () {
     rollup({
@@ -29,19 +32,31 @@ function compileJs () {
     })
 }
 
-function compileCss () {
-    postcss({
-        entry: config.css.entry,
-        dest: config.css.dest,
-        autoprefixer: config.css.autoprefixer,
-        callback: reloadCss
+function compileStylus () {
+    stylus({
+        entry: config.stylus.entry,
+        dest: config.stylus.dest,
+        callback: reloadStylus
     })
 }
+
+// function compileCss () {
+//     postcss({
+//         entry: config.css.entry,
+//         dest: config.css.dest,
+//         autoprefixer: config.css.autoprefixer,
+//         callback: reloadCss
+//     })
+// }
 
 function reloadJs () {
     browserSync.reload(config.js.dest)
 }
 
-function reloadCss () {
-    browserSync.reload(config.css.dest)
+function reloadStylus () {
+    browserSync.reload(config.stylus.dest)
 }
+
+// function reloadCss () {
+//     browserSync.reload(config.css.dest)
+// }

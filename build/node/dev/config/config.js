@@ -20,6 +20,15 @@ module.exports = {
         ],
         autoprefixer: ['last 2 versions']
     },
+    stylus: {
+        entry: 'src/asset/css/main.styl',
+        dest: 'src/public/css/app2.css',
+        watch: [
+            './src/asset/css/main.styl',
+            './src/asset/css/app/**/*.styl',
+            './src/asset/css/lib/**/*.styl'
+        ]
+    },
     php: {
         watch: [
             './src/app/**/*.php',

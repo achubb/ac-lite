@@ -1,5 +1,5 @@
-<div id="c">
-    <div id="c-content">
-        <h1>Contact</h1>
+<div id="c" class="container">
+    <div id="c-content" class="full-centered">
+        Contact
     </div>
 </div>

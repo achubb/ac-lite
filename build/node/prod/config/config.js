@@ -10,7 +10,7 @@ module.exports = {
         js: {
             entry: 'asset/js/main.js',
             dest: 'public/js/app.js',
-            eslint: 'build/node/common/config/.eslintrc'
+            // eslint: 'build/node/common/config/.eslintrc'
         }
     },
     minify: {

@@ -10,6 +10,7 @@ class Transition {
 
         // Move the page to be loaded outside the frame
         newPage.style.transform = 'translate3d(100vw, 0px, 0px)'
+        oldPage.style.position = 'absolute'
 
         // set inTransition to true, to kill clicks when in transition
         window.Penryn.inTransition = true

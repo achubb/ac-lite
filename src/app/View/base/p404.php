@@ -27,15 +27,17 @@
     <body>
         <main id="app">
             <div id="xhr">
-                <div id="p404">
-                    <a href="/">BACK TO HOME</a>
+                <div id="p404" class="container">
+                    <div class="full-centered">
+                        <p>404 - Page not found - <a href="/">BACK TO HOME</a></p>
+                    </div>
                 </div>
             </div>
             <?php include ROOT . 'app/View/common/loader.php'; ?>
         </main>
         <?php include ROOT . 'app/View/issue/updateBrowser.php'; ?>
         <?php include ROOT . 'app/View/issue/enableJavascript.php'; ?>
-        <?php include ROOT . 'app/View/common/svg.php'; ?>
+        <?php //include ROOT . 'app/View/common/svg.php'; ?>
         <!-- Script -->
         <script src="/js/app.js"></script>
     </body>

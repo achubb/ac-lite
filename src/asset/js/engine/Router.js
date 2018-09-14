@@ -22,6 +22,7 @@ xhr
 import S from '@ariiiman/s'
 import Xhr from './Xhr.js'
 import EventDelegation from './EventDelegation.js'
+import Fetch from './Fetch.js'
 
 class Router {
 

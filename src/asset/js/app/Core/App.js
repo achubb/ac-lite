@@ -17,6 +17,13 @@ class App {
             'p404': P404,
             'main': Main
         })
+        
+        // console.log('sup')
+        // 
+        // window.addEventListener('popstate', event => {
+        //     alert('back button!')
+        //     history.pushState({key: 'value'}, 'title', 'home')
+        // }, false);
     }
 
 

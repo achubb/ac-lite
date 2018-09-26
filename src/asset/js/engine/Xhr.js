@@ -19,12 +19,14 @@ Xhr.onPopstate()
 
 */
 
+
 import S from '@ariiiman/s'
+import Fetch from './Fetch.js'
+import Helper from './Helper.js'
 
 class Xhr {
 
     static controller (page, cb, args) {
-        console.log('hit the xhr controller')
         const path = 'index.php?url=' + page + '&xhr=true'
         const xhr = new XMLHttpRequest()
 
@@ -44,10 +46,9 @@ class Xhr {
 
         // Browser history update
         function getHistoryUpdate () {
-            console.log('getHistoryUpdate')
             const pageUrl = page === 'home' ? '/' : page
 
-            history.pushState({key: 'value'}, 'titre', pageUrl)
+            history.pushState({key: 'value'}, 'title', pageUrl)
         }
     }
 
@@ -56,11 +57,14 @@ class Xhr {
         const w = window
         const c = 'complete'
         const a = 'add'
+        const p = Penryn
 
         let blockPopstateEvent = d.readyState !== c
 
 
+        // Load Listener
         S.L(w, a, 'load', load)
+        // Popstate Listener
         S.L(w, a, 'popstate', popstate)
 
         function load () {
@@ -70,10 +74,9 @@ class Xhr {
         }
 
         function popstate (e) {
-            if (blockPopstateEvent && d.readyState === c) {
-                e.preventDefault()
-                e.stopImmediatePropagation()
-            }
+            e.preventDefault()
+            e.stopImmediatePropagation()
+            Fetch.changePage()
         }
 
         w.onpopstate = e => {

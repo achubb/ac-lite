@@ -27,6 +27,7 @@ import Fetch from './Fetch.js'
 class Router {
 
     constructor (o) {
+
         // Parameters
         this.p = Penryn
 

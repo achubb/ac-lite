@@ -95,13 +95,15 @@ class EventDelegation {
         function prD () {
             event.preventDefault()
         }
+        
+        // alert('EVENT DELEGATION')
 
         // history.pushState(null, null, 'hello');
         // window.addEventListener('popstate', event => {
         //     console.log('Nope')
         //     console.log(window.history)
         //         // event.preventDefault()
-        //     history.pushState(null, null, 'hello2');
+        //     //history.pushState(null, null, 'hello2');
         //     Fetch.changePage()
         // })
 

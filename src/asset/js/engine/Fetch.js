@@ -16,17 +16,22 @@ class Fetch {
         const w = window
         const xhrStage = document.querySelector('#xhr')
         const url = w.location.href // The URL should already be changed
+        const p = Penryn
 
-        this.loadPage(url).then(function(responseText) {
-            const wrapper = document.createElement('div')
-                  wrapper.innerHTML = responseText
+        // Only change the page if not currently inTransition
+        if (!p.inTransition) {
+            this.loadPage(url).then(function(responseText) {
+                const wrapper = document.createElement('div')
+                      wrapper.innerHTML = responseText
 
-            const oldCont = document.querySelector('.xPage')
-            const newCont = wrapper.querySelector('.xPage')
+                const oldCont = document.querySelector('.xPage')
+                const newCont = wrapper.querySelector('.xPage')
 
-            xhrStage.appendChild(newCont);
-            Transition.page(oldCont, newCont)
-        })
+                xhrStage.appendChild(newCont);
+                Transition.page(oldCont, newCont)
+            })
+        }
+        
     }
 
 }
